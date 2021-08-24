@@ -1,4 +1,4 @@
-@extends('contacts.layout')
+@extends('layouts.app')
 
 @section('content')
 

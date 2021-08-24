@@ -14,7 +14,14 @@
                         </div>
                     @endif
 
-                    {{ __('You are logged in!') }}
+                    Welcome {{ Auth::user()->name }}
+                    <hr>
+                    
+                    <div>
+                        <a type="button" class="btn btn-primary btn-lg" href="{{ url('/contacts')}}">View Contacts</a>
+                        
+                    </div>
+                    
                 </div>
             </div>
         </div>

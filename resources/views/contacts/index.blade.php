@@ -1,4 +1,4 @@
-@extends('contacts.layout')
+@extends('layouts.app')
 
 @section('content')
 
@@ -32,9 +32,9 @@
       <td>{{ $contact->email_address }}</td>
       <td>
         <form action="{{ route('contacts.destroy',$contact->id) }}" method="POST">
-          <a class="btn btn-info" href="{{ route('contacts.show',$contact->id) }}"><i class="fas fa-eye"></i></a>
+          <a type="button" class="btn btn-info" href="{{ route('contacts.show',$contact->id) }}"><i class="fas fa-eye"></i></a>
     
-          <a class="btn btn-primary" href="{{ route('contacts.edit',$contact->id) }}"><i class="fas fa-edit"></i></a>
+          <a type="button" class="btn btn-primary" href="{{ route('contacts.edit',$contact->id) }}"><i class="fas fa-edit"></i></a>
    
           @csrf
           @method('DELETE')

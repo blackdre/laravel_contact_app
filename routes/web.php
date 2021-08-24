@@ -14,7 +14,7 @@ use App\Http\Controllers\ContactController;
 */
 Route::resource('contacts', ContactController::class);
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
 });
 
 Auth::routes();

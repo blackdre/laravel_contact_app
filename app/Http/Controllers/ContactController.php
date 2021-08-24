@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Mail\WelcomeMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -36,14 +38,21 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validData = $request->validate([
             'name' => 'required',
             'surname' => 'required',
             'id_number' => 'required',
             'mobile_number' => 'required',
             'email_address' => 'required',
         ]);
-        Contact::create($request->all());
+        
+
+
+        $contact = Contact::create($validData);
+
+        Mail::to($contact->email_address)->send(new WelcomeMail());
+
+
         return redirect()->route('contacts.index')->with('sucess', 'Contacts created successfully');
     }
 
