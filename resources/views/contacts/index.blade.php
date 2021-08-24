@@ -2,8 +2,8 @@
 
 @section('content')
 
-<div class="row">
-    <div class="col-lg-12">
+<div class="container">
+    <div class="Header">
         <h1>Welcome</h1>
     </div>
 </div>
@@ -18,7 +18,7 @@
       <th scope="col">SA ID &#8470;</th>
       <th scope="col">mobile &numero;</th>
       <th scope="col">email</th>
-      <th scope="col">DOB</th>
+      <th scope="col">Actions</th>
     </tr>
   </thead>
   <tbody>

@@ -78,17 +78,7 @@ class ContactController extends Controller
      */
     public function update(Request $request, Contact $contact)
     {
-        $request->validate([
-            'name' => 'required',
-            'surname' => 'required',
-            'id_number' => 'required',
-            'mobile_number' => 'required',
-            'email_address' => 'required',
-            'dateofbirth' => 'required',
-            'language' => 'required',
-            'interests' => 'required'
-        ]);
-
+        
         $contact->update($request->all());
         return redirect()->route('contacts.index')->with('success', 'Contact updated successfully');
     }
