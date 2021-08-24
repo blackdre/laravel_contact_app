@@ -9,6 +9,10 @@
         </div>
     </div>
     <div class="container">
-   
+        {{ $contact->name }}
+        {{ $contact->surname }}
+        {{ $contact->id_number }}
+        {{ $contact->email_address }}
+        {{ $contact->mobile_number }}
     </div>
 @endsection
