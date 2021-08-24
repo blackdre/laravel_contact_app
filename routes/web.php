@@ -12,11 +12,13 @@ use App\Http\Controllers\ContactController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::resource('contacts', ContactController::class);
 Route::get('/', function () {
     return view('auth.register');
 });
 
+
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('contacts', ContactController::class);
