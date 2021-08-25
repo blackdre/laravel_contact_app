@@ -3,8 +3,13 @@
 @section('content')
 
 <div class="container">
-    <div class="Header">
+    <div class="welcome">
         <h1>Welcome</h1>
+        @if ($message = Session::get('success'))
+        <div class="alert alert-success">
+            <p>{{ $message }}</p>
+        </div>
+        @endif
     </div>
 </div>
 
@@ -27,9 +32,9 @@
       <th scope="row">{{ $contact->id }}</th>
       <td>{{ $contact->name }}</td>
       <td>{{ $contact->surname }}</td>
-      <td>{{ $contact->id_number }}</td>
-      <td>{{ $contact->mobile_number }}</td>
-      <td>{{ $contact->email_address }}</td>
+      <td>{{ $contact->rsa_id }}</td>
+      <td>{{ $contact->phone }}</td>
+      <td>{{ $contact->email }}</td>
       <td>
         <form action="{{ route('contacts.destroy',$contact->id) }}" method="POST">
           <a type="button" class="btn btn-info" href="{{ route('contacts.show',$contact->id) }}"><i class="fas fa-eye"></i></a>

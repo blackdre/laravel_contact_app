@@ -36,15 +36,23 @@
   </div>
   <div class="col-md-6">
     <label class="form-label">RSA ID &#8470;</label>
-    <input type="text" class="form-control" name="id_number" value="{{ $contact->id_number }}">
+    <input type="text" class="form-control" name="rsa_id" value="{{ $contact->rsa_id }}">
   </div>
   <div class="col-md-6">
     <label class="form-label">Mobile &#8470;</label>
-    <input type="text" class="form-control" name="mobile_number" value="{{ $contact->mobile_number }}">
+    <input type="text" class="form-control" name="phone" value="{{ $contact->phone }}">
   </div>
   <div class="col-md-12">
     <label for="inputCity" class="form-label">Email</label>
-    <input type="email" class="form-control" name="email_address" value="{{ $contact->email_address }}"
+    <input type="email" class="form-control" name="email" value="{{ $contact->email }}"
+  </div>
+  <div class="col-md-12">
+    <label class="form-label">RSA ID &#8470;</label>
+    <input type="text" class="form-control" name="language" value="{{ $contact->language }}">
+  </div>
+  <div class="col-md-12">
+    <label class="form-label">Mobile &#8470;</label>
+    <input type="text" class="form-control" name="interests" value="{{ $contact->interests }}">
   </div>
   
   <div class="col-12 mt-4">

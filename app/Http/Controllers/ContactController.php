@@ -47,16 +47,19 @@ class ContactController extends Controller
         $validData = $request->validate([
             'name' => 'required',
             'surname' => 'required',
-            'id_number' => 'required',
-            'mobile_number' => 'required',
-            'email_address' => 'required',
+            'rsa_id' => 'required|unique:contacts|max:13',
+            'phone' => 'required|unique:contacts',
+            'email' => 'required|unique:contacts',
+            'date_of_birth' => 'required',
+            'language' => 'required',
+            'interests' => 'required'
         ]);
         
 
 
         $contact = Contact::create($validData);
 
-        Mail::to($contact->email_address)->send(new WelcomeMail());
+        Mail::to($contact->email)->send(new WelcomeMail());
 
 
         return redirect()->route('contacts.index')->with('sucess', 'Contacts created successfully');

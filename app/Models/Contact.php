@@ -12,9 +12,12 @@ class Contact extends Model
     protected $fillable = [
         'name',
         'surname',
-        'id_number',
-        'mobile_number',
-        'email_address',
+        'rsa_id',
+        'phone',
+        'email',
+        'date_of_birth',
+        'language',
+        'interests'
     ];
     public $timestamps = false;
 }

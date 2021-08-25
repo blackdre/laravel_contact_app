@@ -17,9 +17,12 @@ class Contact extends Migration
             $table->id();
             $table->string('name');
             $table->string('surname');
-            $table->string('id_number')->unique();
-            $table->string('mobile_number')->unique();
-            $table->string('email_address')->unique();
+            $table->string('rsa_id');
+            $table->string('phone');
+            $table->string('email');
+            $table->string('date_of_birth');
+            $table->string('language');
+            $table->string('interests');
         });
     }
 
